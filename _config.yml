@@ -8,7 +8,7 @@ url: "https://code-conquer.github.io"
 
 # GitHub User settings
 username: Username
-github_username: github_username
+github_username: code-conquer
 user_description: user_description
 user_title: user_title
 email: 
@@ -17,12 +17,12 @@ email:
 author: 
   name: Hua Li            
   picture:        
-  email: 598720002@qq.com           
+  email:           
   description:     
   twitter:
   facebook:
-  github: code-conquer         
-  linkedin: https://github.com/code-conquer
+  github:        
+  linkedin: 
   clustrmap: WjlzPiAKyYbZ0xzEgnGVdr3ooi-kdWat5oRJ4og1NXQ
 
 
