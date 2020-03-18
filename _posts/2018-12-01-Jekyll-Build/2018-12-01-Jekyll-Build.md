@@ -54,7 +54,17 @@ About the extended markdown syntaxes, you can see it [here]().
 
 I am going to assume that you know the basic operations of git. If not, download the [GitHub Desktop](https://desktop.github.com/), and do everything in GUI. For the majority of bloggers, only commit and push is required. For you to publish your work, save your file in your editor, go to GitHub Desktop, commit your changes, and push.
 
-<img src="https://github.com/code-conquer/code-conquer.github.io/blob/master/_posts/2018-12-01-Jekyll-Build/assets/GitHub-desktop.png" alt="GitHub desktop screen shot" width="60%">
+<img src="https://github.com/code-conquer/code-conquer.github.io/raw/master/_posts/2018-12-01-Jekyll-Build/assets/GitHub-desktop.png" alt="GitHub desktop screen shot" width="60%">
+
+
+
+
+
+
+
+
+
+
 
 # Clone The Repo
 
