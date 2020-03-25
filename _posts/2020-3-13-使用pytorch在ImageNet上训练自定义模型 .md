@@ -13,15 +13,13 @@ description: 因为自己设计了新的网络结构，之前在ImageNet上预�
 
 数据集选择常用的`ISLVRC2012` （ImageNet Large Scale Visual Recognition Challenge）
 
-__下载地址__
-
-* 训练集 http://www.image-net.org/challenges/LSVRC/2012/nnoupb/ILSVRC2012_img_train.tar（138G）
-* 测试集 http://www.image-net.org/challenges/LSVRC/2012/nnoupb/ILSVRC2012_img_test.tar （12.7G）
-* 验证集http://www.image-net.org/challenges/LSVRC/2012/nnoupb/ILSVRC2012_img_val.tar （6.3G）
+* 训练集<a href=" http://www.image-net.org/challenges/LSVRC/2012/nnoupb/ILSVRC2012_img_train.tar"> http://www.image-net.org/challenges/LSVRC/2012/nnoupb/ILSVRC2012_img_train.tar</a>（138G）
+* 测试集 <a href=" http://www.image-net.org/challenges/LSVRC/2012/nnoupb/ILSVRC2012_img_test.tar ">http://www.image-net.org/challenges/LSVRC/2012/nnoupb/ILSVRC2012_img_test.tar </a>（12.7G）
+* 验证集<a href="http://www.image-net.org/challenges/LSVRC/2012/nnoupb/ILSVRC2012_img_val.tar ">http://www.image-net.org/challenges/LSVRC/2012/nnoupb/ILSVRC2012_img_val.tar </a> （6.3G）
 
 
 
-__预处理__
+## 预处理
 
 为了使用Pytorch自带的DataLoader函数进行数据集加载，我们需要将每一个相同类的图片放到相同的文件夹。
 
@@ -41,4 +39,20 @@ mkdir val && mv ILSVRC2012_img_val.tar val/ && cd val && tar -xvf ILSVRC2012_img
 wget -qO- https://raw.githubusercontent.com/soumith/imagenetloader.torch/master/valprep.sh | bash
 ```
 
-暂时更新数据集这里，后面找时间再更。
+之后将训练集和验证集文件夹名称改为 __train__ 、 __val__ 
+
+# 训练模型
+
+## 训练源码的准备
+
+首先去github上找到pytorch的examples，这里面有很多的代码， __Training Imagenet Classifiers with Residual Networks__   里面的代码就是我们想要使用的。
+
+主要修改的地方就是 __创建模型实例时，使用自己的模型创建__  就ok啦。
+
+在命令行内输入以下命令就可以训练啦：
+
+```
+python main.py -a resnet101 --dist url 'tcp://127.0.0.1:8001' --dist-backend 'nccl' --world-size 1 --rank 0 /data/dataset/imagenet 
+```
+
+__注意__ ：有一些参数要根据自己的需要作出修改，这里给出的是我所训练时的命令。
